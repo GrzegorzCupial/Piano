@@ -3,10 +3,10 @@ window.addEventListener('keydown', function(e){
     var key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
     audio.currentTime = 0;
     audio.play();
-    key.classList.add('playing');
+    key.classList.add('playing', 'key--no-border');
 });
 function removeTransition(e) {
-    this.classList.remove('playing');
+    this.classList.remove('playing', 'key--no-border');
 }
 const keys = document.querySelectorAll('.key');
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
